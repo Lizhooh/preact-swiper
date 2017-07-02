@@ -3,13 +3,17 @@ import Swiper from 'swiper';
 
 export default class PSwiper extends Component {
 
+    static defaultProps = {
+        swiperIsInitialized: () => { },
+        options: {},
+    };
+
     constructor(props) {
         super(props);
 
         // default props
         this.props.options = Object.assign({
             pagination: '.swiper-pagination',
-            swiperIsInitialized: () => { },
         }, this.props.options);
 
         this.slicelist = this.props.children.map((item, index) => (

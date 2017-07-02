@@ -4,6 +4,8 @@ exports.__esModule = true;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
@@ -21,6 +23,15 @@ var _swiper2 = _interopRequireDefault(_swiper);
 var PSwiper = (function (_Component, _H) {
     _inherits(PSwiper, _Component);
 
+    _createClass(PSwiper, null, [{
+        key: 'defaultProps',
+        value: {
+            swiperIsInitialized: function swiperIsInitialized() { },
+            options: {}
+        },
+        enumerable: true
+    }]);
+
     function PSwiper(props) {
         _classCallCheck(this, PSwiper);
 
@@ -28,8 +39,7 @@ var PSwiper = (function (_Component, _H) {
 
         // default props
         this.props.options = Object.assign({
-            pagination: '.swiper-pagination',
-            swiperIsInitialized: function swiperIsInitialized() { }
+            pagination: '.swiper-pagination'
         }, this.props.options);
 
         this.slicelist = this.props.children.map(function (item, index) {
@@ -59,7 +69,7 @@ var PSwiper = (function (_Component, _H) {
         this.props.swiperIsInitialized(this.swiper);
     };
 
-    // You must return false, at this point DOM is operated by an external, and no VDOM is required
+    // You must return false, at this point DOM is operated by an external
 
     PSwiper.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps, nextState) {
 
@@ -92,7 +102,7 @@ var PSwiper = (function (_Component, _H) {
                 { className: 'swiper-wrapper' },
                 this.slicelist
             ),
-            !!pagination && _H('div', { 'className': 'swiper-pagination' })
+            !!pagination && _H('div', { className: 'swiper-pagination' })
         );
     };
 
