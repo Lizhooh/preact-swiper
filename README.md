@@ -5,6 +5,7 @@
 ### Installation
 
 ```bash
+npm install --save preact-swiper@https://github.com/Lizhooh/preact-swiper.git
 ```
 
 ### Usage
@@ -17,14 +18,9 @@ export default class MySwiper extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            swiperIsInitialized: null,
-            pagination: true,
-        }
     }
 
-    render({ }, { pagination, swiperIsInitialized }) {
+    render() {
         return (
             <PSwiper
                 style={{
@@ -36,8 +32,10 @@ export default class MySwiper extends Component {
                     autoplay: 3000,
                     autoplayDisableOnInteraction: false
                 }}
-                pagination={pagination}
-                swiperIsInitialized={swiperIsInitialized}
+                pagination={true}
+                swiperIsInitialized={() => {
+                    // swiper Is Initialized
+                }}
                 >
                 <div className='slide'>Slide 1</div>
                 <div className='slide'>Slide 2</div>
@@ -64,6 +62,16 @@ export default class MySwiper extends Component {
 }
 ```
 
+**Demo:**
+
+![](./demo/preact-swiper-demo.gif)
+
+## Method
+Method API Look: http://idangero.us/swiper/api/#.WVh1NVMT8m4
+
+```js
+ref={r => this.swiper = r.swiper}
+```
 
 ## License
 [License](./LICENSE)
