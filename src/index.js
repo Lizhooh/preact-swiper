@@ -11,7 +11,7 @@ export default class PSwiper extends Component {
     constructor(props) {
         super(props);
 
-        // default props
+        // default options
         this.props.options = Object.assign({
             pagination: '.swiper-pagination',
         }, this.props.options);

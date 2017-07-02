@@ -2,6 +2,10 @@
 ## preact-swiper
 `preact-swiper` is a [swiper.js](https://github.com/nolimits4web/Swiper) based swiper component.
 
+**Demo:**
+
+![](./demo/preact-swiper-demo.gif)
+
 ### Installation
 
 ```bash
@@ -30,11 +34,13 @@ export default class MySwiper extends Component {
                 options={{
                     loop: true,
                     autoplay: 3000,
-                    autoplayDisableOnInteraction: false
+                    autoplayDisableOnInteraction: false,
+                    paginationClickable: true
                 }}
                 pagination={true}
-                swiperIsInitialized={() => {
+                swiperIsInitialized={swiper => {
                     // swiper Is Initialized
+                    this.swiper = swiper;
                 }}
                 >
                 <div className='slide'>Slide 1</div>
@@ -46,7 +52,7 @@ export default class MySwiper extends Component {
 }
 ```
 
-**Style:**
+**CSS:**
 
 ```css
 .slide {
@@ -62,15 +68,18 @@ export default class MySwiper extends Component {
 }
 ```
 
-**Demo:**
-
-![](./demo/preact-swiper-demo.gif)
-
 ## Method
 Method API Look: http://idangero.us/swiper/api/#.WVh1NVMT8m4
 
 ```js
-ref={r => this.swiper = r.swiper}
+<PSwiper
+    swiperIsInitialized={swiper => {
+        // swiper Is Initialized
+        this.swiper = swiper;
+        this.swiper.slideTo(2); // active index 2
+    }}
+    >
+</PSwiper>
 ```
 
 ## License
