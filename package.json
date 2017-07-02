@@ -1,0 +1,32 @@
+{
+  "name": "preact-swiper",
+  "description": "preact swiper component",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lizhooh/preact-swiper.git"
+  },
+  "homepage": "https://github.com/lizhooh/preact-swiper",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "preact": "^8.1.0",
+    "swiper": "^3.4.2"
+  },
+  "keywords": [
+    "preact",
+    "swiper",
+    "preact-swiper"
+  ],
+  "author": {
+    "name": "lizhooh",
+    "email": "lizhoohs@foxmail.com",
+    "url": "http://me.lizhooh.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  }
+}
