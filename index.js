@@ -54,6 +54,7 @@ var PSwiper = (function (_Component, _H) {
     // clear
 
     PSwiper.prototype.componentWillUnmount = function componentWillUnmount() {
+        this.swiper.removeAllSlides();
         this.swiper.destroy(true, true);
         this.swiper = null;
     };

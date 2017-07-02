@@ -25,6 +25,7 @@ export default class PSwiper extends Component {
 
     // clear
     componentWillUnmount() {
+        this.swiper.removeAllSlides();
         this.swiper.destroy(true, true);
         this.swiper = null;
     }
