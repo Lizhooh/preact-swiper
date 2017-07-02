@@ -1,10 +1,12 @@
 
 ## preact-swiper
-`preact-swiper` is a [swiper.js](https://github.com/nolimits4web/Swiper) based swiper component.
+`preact-swiper` is a component based on [preact](https://preactjs.com/) and [swiper.js](https://github.com/nolimits4web/Swiper)
+
+![](./img/logo.png)
 
 **Demo:**
 
-![](./demo/preact-swiper-demo.gif)
+![](./img/preact-swiper-demo.gif)
 
 ### Installation
 
