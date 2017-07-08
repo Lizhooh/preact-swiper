@@ -34,8 +34,10 @@ export default class PSwiper extends Component {
     componentDidMount() {
         let { options, swiperIsInitialized } = this.props;
 
-        this.swiper = new Swiper(this.root, options);
-        this.props.swiperIsInitialized(this.swiper);
+        if (typeof window !== undefined) {
+            this.swiper = new Swiper(this.root, options);
+            this.props.swiperIsInitialized(this.swiper);
+        }
     }
 
     // You must return false, at this point DOM is operated by an external

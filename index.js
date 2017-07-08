@@ -66,8 +66,10 @@ var PSwiper = (function (_Component, _H) {
         var options = _props.options;
         var swiperIsInitialized = _props.swiperIsInitialized;
 
-        this.swiper = new _swiper2['default'](this.root, options);
-        this.props.swiperIsInitialized(this.swiper);
+        if (typeof window !== undefined) {
+            this.swiper = new _swiper2['default'](this.root, options);
+            this.props.swiperIsInitialized(this.swiper);
+        }
     };
 
     // You must return false, at this point DOM is operated by an external

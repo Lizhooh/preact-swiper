@@ -11,10 +11,26 @@
 ### Installation
 
 ```bash
+npm install --save swiper
 npm install --save preact-swiper@https://github.com/Lizhooh/preact-swiper.git
 ```
 
 ### Usage
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--add css -->
+    <link href="http://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- some -->
+</body>
+</html>
+```
 
 ```js
 import { h, Component } from 'preact';
