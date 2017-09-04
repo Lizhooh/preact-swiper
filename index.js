@@ -45,7 +45,7 @@ var PSwiper = (function (_Component, _H) {
         this.slicelist = this.props.children.map(function (item, index) {
             return _H(
                 'div',
-                { className: 'swiper-slide', key: 'swiper-slide-' + Date.now() },
+                { className: 'swiper-slide', key: 'swiper-slide-' + index },
                 item
             );
         });

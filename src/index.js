@@ -17,7 +17,7 @@ export default class PSwiper extends Component {
         }, this.props.options);
 
         this.slicelist = this.props.children.map((item, index) => (
-            <div className='swiper-slide' key={`swiper-slide-${Date.now()}`}>
+            <div className='swiper-slide' key={`swiper-slide-${index}`}>
                 {item}
             </div>
         ));
