@@ -23,6 +23,23 @@ export default class PSwiper extends Component {
         ));
     }
 
+    // update props
+    componentWillReceiveProps(nextProps) {
+        this.slicelist = nextProps.children.map((item, index) => (
+            <div className='swiper-slide' key={`swiper-slide-${Math.random()}`}>
+                {item}
+            </div>
+        ));
+        this._render = true;
+        this.componentWillUnmount();  // clear
+        this.componentDidMount();     // again init
+    }
+
+    // update node element
+    componentDidUpdate(nextProps, nextState) {
+        this.swiper.update(true);
+    }
+
     // clear
     componentWillUnmount() {
         this.swiper.removeAllSlides();
@@ -45,6 +62,11 @@ export default class PSwiper extends Component {
 
         if (typeof nextProps.activeIndex === 'number') {
             this.swiper.slideTo(nextProps.activeIndex);
+        }
+
+        if (this._render === true) {
+            this._render = false;
+            return true;
         }
 
         return false;
